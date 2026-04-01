@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rubén Azócar | Desarrollador Full Stack</title>
+  
+  <!-- Security Headers (CSP) -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://api.github.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://*.githubusercontent.com https://github.com; connect-src 'self' https://api.github.com; frame-ancestors 'none'; object-src 'none'; base-uri 'self';">
+
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta name="permissions-policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()">
+
+  <meta name="description" content="Portafolio profesional de Rubén Azócar, Desarrollador Full Stack enfocado en soluciones escalables y seguras.">
+  <meta name="keywords" content="Rubén Azócar, desarrollador, full stack, portafolio, programador, web developer, Chile" />
+  <meta name="author" content="Rubén Azócar">
+  <meta property="og:title" content="Rubén Azócar | Desarrollador Full Stack" />
+  <meta property="og:description" content="Portafolio profesional de Rubén Azócar Daroch: proyectos reales, stack moderno y pasión por el código." />
+  <meta property="og:type" content="website" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/logo_ra.png">
+  
+  <!-- Preload & Security for Fonts/Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome con Subresource Integrity (SRI) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Devicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicons/1.8.0/css/devicons.min.css" integrity="sha512-JW3fT0YTK7pT7w437SoX6GcW76jOZ6E0jGmrqBAcloC4GKT+njHOY4fX5KxJ9WfIXTkNrAF994525fAHp+KCxg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== CURSOR GLOW ===== -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#inicio" class="nav-logo">
+        <img src="img/logo_ra.png" alt="RA Soluciones Digitales" class="logo-img">
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+        <li><a href="#sobre-mi" class="nav-link">Sobre Mí</a></li>
+        <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#credenciales" class="nav-link">Credenciales</a></li>
+        <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
+        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" title="Alternar modo oscuro/claro" aria-label="Cambiar tema">
+          <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
+        <a href="#contacto" class="btn btn-primary btn-sm">Contáctame</a>
+        <button class="hamburger" id="hamburger" aria-label="Menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+      </div>
+      <div class="hero-particles" id="heroParticles"></div>
+    </div>
+
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-badge reveal">
+          <span class="badge-dot"></span>
+          <span>Disponible para proyectos</span>
+        </div>
+
+        <h1 class="hero-title reveal">
+          Hola, soy <br />
+          <span class="gradient-text typing-text" id="heroName">Rubén Azócar</span>
+        </h1>
+
+        <div class="hero-subtitle reveal">
+          <span class="subtitle-prefix">Soy</span>
+          <span class="typing-container">
+            <span class="typing-words" id="typingWords"></span>
+            <span class="typing-cursor">|</span>
+          </span>
+        </div>
+
+        <p class="hero-description reveal">
+          Construyo experiencias digitales <strong>excepcionales</strong> que combinan
+          código limpio, diseño intuitivo y soluciones escalables.
+          Del concepto al deploy, cada línea de código cuenta una historia.
+        </p>
+
+        <div class="hero-cta reveal">
+          <a href="#proyectos" class="btn btn-primary btn-lg">
+            <i class="fas fa-rocket"></i>
+            Ver mis proyectos
+          </a>
+          <a href="#sobre-mi" class="btn btn-ghost btn-lg">
+            <i class="fas fa-user"></i>
+            Sobre mí
+          </a>
+        </div>
+
+        <div class="hero-stats reveal">
+          <div class="stat-item">
+            <span class="stat-number" data-count="0" id="reposCount">0</span>
+            <span class="stat-label">Repositorios</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="2" id="yearsCount">0</span>
+            <span class="stat-label">Años de experiencia</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="10" id="techCount">0</span>
+            <span class="stat-label">Tecnologías</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="code-card">
+          <div class="code-card-header">
+            <div class="code-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <span class="code-filename">portafolio.js</span>
+          </div>
+          <div class="code-card-body">
+            <pre class="code-content"><code><span class="code-keyword">const</span> <span class="code-var">developer</span> = {
+  <span class="code-prop">nombre</span>: <span class="code-string">"Tu Nombre"</span>,
+  <span class="code-prop">rol</span>: <span class="code-string">"Full Stack Dev"</span>,
+  <span class="code-prop">stack</span>: [
+    <span class="code-string">"React"</span>, <span class="code-string">"Node.js"</span>,
+    <span class="code-string">"Python"</span>, <span class="code-string">"PostgreSQL"</span>
+  ],
+  <span class="code-prop">pasión</span>: <span class="code-string">"Código limpio 🚀"</span>,
+  <span class="code-boolean">disponible</span>: <span class="code-boolean">true</span>
+};</code></pre>
+          </div>
+        </div>
+
+        <div class="floating-badges">
+          <div class="f-badge f-badge-1"><i class="fab fa-react"></i> React</div>
+          <div class="f-badge f-badge-2"><i class="fab fa-node-js"></i> Node</div>
+          <div class="f-badge f-badge-3"><i class="fab fa-python"></i> Python</div>
+          <div class="f-badge f-badge-4"><i class="fas fa-database"></i> SQL</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-indicator">
+      <a href="#sobre-mi" aria-label="Scroll hacia abajo">
+        <div class="scroll-circle">
+          <i class="fas fa-chevron-down"></i>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== SOBRE MÍ ===== -->
+  <section class="sobre-mi section" id="sobre-mi">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// about_me</span>
+        <h2 class="section-title">Sobre <span class="gradient-text">Mí</span></h2>
+        <p class="section-subtitle">La historia detrás del código</p>
+      </div>
+
+      <div class="sobre-mi-grid">
+        <div class="sobre-mi-image reveal">
+          <div class="avatar-container">
+            <div class="avatar-frame">
+              <div class="avatar-img-wrapper">
+                <img src="img/logo_ra.png" alt="RA Soluciones Digitales Logo" class="about-logo-img">
+              </div>
+              <div class="avatar-ring ring-1"></div>
+              <div class="avatar-ring ring-2"></div>
+              <div class="avatar-decoration">
+                <div class="deco-item deco-1"><i class="fas fa-code"></i></div>
+                <div class="deco-item deco-2"><i class="fas fa-terminal"></i></div>
+                <div class="deco-item deco-3"><i class="fas fa-coffee"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sobre-mi-content reveal">
+          <h3 class="sobre-mi-title">Desarrollador apasionado por <span class="gradient-text">crear soluciones</span> que importan</h3>
+
+          <div class="sobre-mi-text">
+            <p>
+              Hola 👋 Soy <strong>Rubén Azócar Daroch</strong>, un desarrollador Full Stack con sólida formación técnica
+              y una profunda pasión por transformar ideas en productos digitales de alto impacto.
+            </p>
+            <p>
+              Mi camino en el desarrollo web comenzó con la curiosidad de entender <em>cómo funcionan las cosas</em>
+              y hoy me dedico a construir aplicaciones robustas, escalables y centradas en la experiencia del usuario.
+            </p>
+            <p>
+              Creo firmemente en que el <strong>código limpio</strong> no es un lujo, es una responsabilidad.
+              Cada proyecto es una oportunidad de aplicar buenas prácticas, aprender algo nuevo y dejar
+              una huella positiva en el ecosistema digital.
+            </p>
+          </div>
+
+          <div class="sobre-mi-details">
+            <div class="detail-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Chile, Sudamérica</span>
+            </div>
+            <div class="detail-item">
+              <i class="fas fa-graduation-cap"></i>
+              <span>Ingeniería / Talento Digital</span>
+            </div>
+            <div class="detail-item">
+              <i class="fas fa-briefcase"></i>
+              <span>Disponible para trabajar</span>
+            </div>
+            <div class="detail-item">
+              <i class="fas fa-language"></i>
+              <span>Español (nativo) · Inglés (C2)</span>
+            </div>
+          </div>
+
+          <div class="sobre-mi-actions">
+            <a href="#contacto" class="btn btn-primary">
+              <i class="fas fa-paper-plane"></i> Colaboremos
+            </a>
+            <a href="#" class="btn btn-ghost" id="downloadCV">
+              <i class="fas fa-download"></i> Descargar CV
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROYECTOS (GitHub API) ===== -->
+  <section class="proyectos section" id="proyectos">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// my_projects</span>
+        <h2 class="section-title">Mis <span class="gradient-text">Proyectos</span></h2>
+        <p class="section-subtitle">Repositorios públicos cargados en tiempo real desde GitHub</p>
+      </div>
+
+      <div class="github-profile-banner reveal" id="githubBanner">
+        <div class="github-profile-info">
+          <img src="" alt="GitHub Avatar" class="github-avatar" id="githubAvatar" />
+          <div class="github-meta">
+            <h3 id="githubUsername">Cargando...</h3>
+            <p id="githubBio">...</p>
+            <div class="github-stats-mini">
+              <span><i class="fas fa-code-branch"></i> <span id="gbRepos">—</span> repos</span>
+              <span><i class="fas fa-users"></i> <span id="gbFollowers">—</span> seguidores</span>
+              <span><i class="fas fa-user-plus"></i> <span id="gbFollowing">—</span> siguiendo</span>
+            </div>
+          </div>
+        </div>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm" id="githubProfileLink">
+          <i class="fab fa-github"></i> Ver perfil
+        </a>
+      </div>
+
+      <!-- Filtros -->
+      <div class="filter-bar reveal" id="filterBar">
+        <button class="filter-btn active" data-filter="all" id="filter-all">
+          <i class="fas fa-th-large"></i> Todos
+        </button>
+        <!-- Los filtros de lenguaje se agregan dinámicamente -->
+      </div>
+
+      <!-- Search -->
+      <div class="search-bar reveal">
+        <div class="search-input-wrapper">
+          <i class="fas fa-search"></i>
+          <input type="text" id="searchRepos" placeholder="Buscar repositorios..." class="search-input" />
+        </div>
+        <div class="sort-wrapper">
+          <select id="sortRepos" class="sort-select">
+            <option value="updated">Más recientes</option>
+            <option value="stars">Más estrellas</option>
+            <option value="name">Nombre A-Z</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Loading -->
+      <div class="projects-loading" id="projectsLoading">
+        <div class="loading-spinner">
+          <div class="spinner-ring"></div>
+        </div>
+        <p>Conectando con GitHub API...</p>
+      </div>
+
+      <!-- Error state -->
+      <div class="projects-error hidden" id="projectsError">
+        <div class="error-icon"><i class="fas fa-exclamation-triangle"></i></div>
+        <h3>No se pudieron cargar los proyectos</h3>
+        <p id="errorMessage">Error al conectar con GitHub API.</p>
+        <button class="btn btn-primary" id="retryBtn">
+          <i class="fas fa-redo"></i> Reintentar
+        </button>
+      </div>
+
+      <!-- Grid de proyectos -->
+      <div class="projects-grid" id="projectsGrid"></div>
+
+      <!-- Empty state -->
+      <div class="projects-empty hidden" id="projectsEmpty">
+        <i class="fas fa-search"></i>
+        <p>No se encontraron proyectos con ese filtro.</p>
+        <button class="btn btn-ghost" id="clearFilterBtn">Limpiar filtros</button>
+      </div>
+
+      <div class="projects-footer reveal" id="projectsFooter" style="display:none;">
+        <button class="btn btn-ghost" id="loadMoreBtn">
+          <i class="fas fa-plus"></i> Cargar más proyectos
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// tech_stack</span>
+        <h2 class="section-title">Stack <span class="gradient-text">Tecnológico</span></h2>
+        <p class="section-subtitle">Herramientas y tecnologías que domino</p>
+      </div>
+
+      <div class="skills-categories">
+
+        <div class="skill-category reveal">
+          <h3 class="category-title"><i class="fas fa-laptop-code"></i> Frontend</h3>
+          <div class="skills-grid">
+            <div class="skill-card" data-tooltip="HTML5">
+              <div class="skill-icon" style="--color: #E34F26;">
+                <i class="fab fa-html5"></i>
+              </div>
+              <span class="skill-name">HTML5</span>
+              <div class="skill-bar"><div class="skill-fill" style="--width: 90%;"></div></div>
+            </div>
+            <div class="skill-card" data-tooltip="CSS3">
+              <div class="skill-icon" style="--color: #1572B6;">
+                <i class="fab fa-css3-alt"></i>
+              </div>
+              <span class="skill-name">CSS3</span>
+              <div class="skill-bar"><div class="skill-fill" style="--width: 85%;"></div></div>
+            </div>
+            <div class="skill-card" data-tooltip="JavaScript">
+              <div class="skill-icon" style="--color: #F7DF1E;">
+                <i class="fab fa-js-square"></i>
+              </div>
+              <span class="skill-name">JavaScript</span>
+              <div class="skill-bar"><div class="skill-fill" style="--width: 80%;"></div></div>
+            </div>
+            <div class="skill-card" data-tooltip="React">
+              <div class="skill-icon" style="--color: #61DAFB;">
+                <i class="fab fa-react"></i>
+              </div>
+              <span class="skill-name">React</span>
+              <div class="skill-bar"><div class="skill-fill" style="--width: 75%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <h3 class="category-title"><i class="fas fa-server"></i> Backend</h3>
+          <div class="skills-grid">
+            <div class="skill-card" data-tooltip="Node.js">
+              <div class="skill-icon" style="--color: #339933;">
+                <i class="fab fa-node-js"></i>
+              </div>
+              <span class="skill-name">Node.js</span>
+              <div class="skill-bar"><div class="skill-fill" style="--width: 78%;"></div></div>
+            </div>
+            <div class="skill-card" data-tooltip="Spring Boot">
+              <div class="skill-icon" style="--color: #6DB33F;">
+                <i class="fas fa-leaf"></i>
+              </div>
+              <span class="skill-name">Spring Boot</span>
+              <div class="skill-bar"><div class="skill-fill" style="--width: 75%;"></div></div>
+            </div>
+            <div class="skill-card" data-tooltip="Python">
+              <div class="skill-icon" style="--color: #3776AB;">
+                <i class="fab fa-python"></i>
+              </div>
+              <span class="skill-name">Python</span>
+              <div class="skill-bar"><div class="skill-fill" style="--width: 78%;"></div></div>
+            </div>
+            <div class="skill-card" data-tooltip="Java">
+              <div class="skill-icon" style="--color: #ED8B00;">
+                <i class="fab fa-java"></i>
+              </div>
+              <span class="skill-name">Java</span>
+              <div class="skill-bar"><div class="skill-fill" style="--width: 70%;"></div></div>
+            </div>
+            <div class="skill-card" data-tooltip="REST APIs">
+              <div class="skill-icon" style="--color: #00D4AA;">
+                <i class="fas fa-plug"></i>
+              </div>
+              <span class="skill-name">REST APIs</span>
+              <div class="skill-bar"><div class="skill-fill" style="--width: 80%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <h3 class="category-title"><i class="fas fa-database"></i> Base de Datos</h3>
+          <div class="skills-grid">
+            <div class="skill-card" data-tooltip="PostgreSQL">
+              <div class="skill-icon" style="--color: #336791;">
+                <i class="fas fa-database"></i>
+              </div>
+              <span class="skill-name">PostgreSQL</span>
+              <div class="skill-bar"><div class="skill-fill" style="--width: 75%;"></div></div>
+            </div>
+            <div class="skill-card" data-tooltip="MySQL">
+              <div class="skill-icon" style="--color: #4479A1;">
+                <i class="fas fa-table"></i>
+              </div>
+              <span class="skill-name">MySQL</span>
+              <div class="skill-bar"><div class="skill-fill" style="--width: 70%;"></div></div>
+            </div>
+
+            <div class="skill-card" data-tooltip="SQLite">
+              <div class="skill-icon" style="--color: #003B57;">
+                <i class="fas fa-hdd"></i>
+              </div>
+              <span class="skill-name">SQLite</span>
+              <div class="skill-bar"><div class="skill-fill" style="--width: 72%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <h3 class="category-title"><i class="fas fa-tools"></i> DevOps & Herramientas</h3>
+          <div class="skills-grid">
+            <div class="skill-card" data-tooltip="Git">
+              <div class="skill-icon" style="--color: #F05032;">
+                <i class="fab fa-git-alt"></i>
+              </div>
+              <span class="skill-name">Git</span>
+              <div class="skill-bar"><div class="skill-fill" style="--width: 85%;"></div></div>
+            </div>
+            <div class="skill-card" data-tooltip="GitHub">
+              <div class="skill-icon" style="--color: #ffffff;">
+                <i class="fab fa-github"></i>
+              </div>
+              <span class="skill-name">GitHub</span>
+              <div class="skill-bar"><div class="skill-fill" style="--width: 85%;"></div></div>
+            </div>
+
+            <div class="skill-card" data-tooltip="Linux">
+              <div class="skill-icon" style="--color: #FCC624;">
+                <i class="fab fa-linux"></i>
+              </div>
+              <span class="skill-name">Linux</span>
+              <div class="skill-bar"><div class="skill-fill" style="--width: 70%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CREDENCIALES ===== -->
+  <section class="credenciales section" id="credenciales">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// credentials</span>
+        <h2 class="section-title">Credenciales &amp; <span class="gradient-text">Certificaciones</span></h2>
+        <p class="section-subtitle">Formación continua que respalda mi trabajo</p>
+      </div>
+
+      <!-- TARJETAS PRINCIPALES -->
+      <div class="credentials-grid">
+
+        <!-- Talento Digital -->
+        <div class="credential-card reveal">
+          <div class="credential-badge">
+            <div class="badge-icon" style="--color: #5865F2;">
+              <i class="fas fa-award"></i>
+            </div>
+            <div class="badge-glow" style="--glow: #5865F2;"></div>
+          </div>
+          <div class="credential-info">
+            <span class="credential-issuer">Talento Digital</span>
+            <h4 class="credential-title">Desarrollo Full Stack</h4>
+            <p class="credential-desc">Formación intensiva en tecnologías frontend y backend con enfoque en proyectos reales.</p>
+            <div class="credential-meta">
+              <span class="credential-date"><i class="far fa-calendar"></i> 2024 - 2025</span>
+              <span class="credential-tag">Full Stack</span>
+            </div>
+          </div>
+          <a href="#" class="credential-link" title="Ver certificado">
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+
+        <!-- Oracle ONE / Alura -->
+        <div class="credential-card reveal">
+          <div class="credential-badge">
+            <div class="badge-icon" style="--color: #F80000;">
+              <i class="fab fa-java"></i>
+            </div>
+            <div class="badge-glow" style="--glow: #F80000;"></div>
+          </div>
+          <div class="credential-info">
+            <span class="credential-issuer">Oracle ONE / Alura Latam</span>
+            <h4 class="credential-title">Tech Foundation — Especialización BackEnd</h4>
+            <p class="credential-desc">Fundamentos de programación JavaScript, Java, Spring Framework, MySQL, PostgreSQL, Git y GitHub.</p>
+            <div class="credential-meta">
+              <span class="credential-date"><i class="far fa-calendar"></i> 2024</span>
+              <span class="credential-tag">Java</span>
+              <span class="credential-tag">Spring Framework</span>
+              <span class="credential-tag">MySQL</span>
+              <span class="credential-tag">Git</span>
+            </div>
+          </div>
+          <a href="certificates/Oracle_Alura/Ruben Azocar Daroch - Certificado de Finalizacion de Programa -.pdf"
+             target="_blank" rel="noopener noreferrer" class="credential-link" title="Ver certificado de finalización">
+            <i class="fas fa-file-pdf"></i>
+          </a>
+        </div>
+
+        <!-- Google Cybersecurity -->
+        <div class="credential-card reveal">
+          <div class="credential-badge">
+            <div class="badge-icon" style="--color: #F59E0B;">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="badge-glow" style="--glow: #F59E0B;"></div>
+          </div>
+          <div class="credential-info">
+            <span class="credential-issuer">Google / Coursera</span>
+            <h4 class="credential-title">Google Cybersecurity Professional Certificate</h4>
+            <p class="credential-desc">9 cursos especializados: fundamentos de ciberseguridad, seguridad de redes, Linux, SQL, detección de amenazas, Python y preparación laboral.</p>
+            <div class="credential-meta">
+              <span class="credential-date"><i class="far fa-calendar"></i> 2025</span>
+              <span class="credential-tag">Ciberseguridad</span>
+              <span class="credential-tag">Python</span>
+              <span class="credential-tag">SIEM</span>
+            </div>
+            <!-- Acordeón de sub-certificados -->
+            <button class="cert-accordion-btn" id="googleCertBtn" aria-expanded="false" aria-controls="googleCertList">
+              <i class="fas fa-list-ul"></i> Ver los 9 certificados del programa
+              <i class="fas fa-chevron-down cert-chevron"></i>
+            </button>
+            <div class="cert-accordion-list hidden" id="googleCertList">
+              <a href="certificates/Google-Cybersecurity/1.-Coursera Foundations of Cybersecurity (X3WET70SOALN).pdf"
+                 target="_blank" rel="noopener noreferrer" class="cert-sub-item">
+                <i class="fas fa-file-pdf"></i> 1. Foundations of Cybersecurity
+              </a>
+              <a href="certificates/Google-Cybersecurity/2.-Coursera Play It Safe Manage Security Risks (W1U8ONGLZMMK).pdf"
+                 target="_blank" rel="noopener noreferrer" class="cert-sub-item">
+                <i class="fas fa-file-pdf"></i> 2. Play It Safe: Manage Security Risks
+              </a>
+              <a href="certificates/Google-Cybersecurity/3.-Coursera Connect and Protect Networks and Network (75OREHM4D6CG).pdf"
+                 target="_blank" rel="noopener noreferrer" class="cert-sub-item">
+                <i class="fas fa-file-pdf"></i> 3. Connect and Protect: Networks
+              </a>
+              <a href="certificates/Google-Cybersecurity/4.-Coursera Tools of the Trade Linux  and SQL (J0J0E9B2O3BU).pdf"
+                 target="_blank" rel="noopener noreferrer" class="cert-sub-item">
+                <i class="fas fa-file-pdf"></i> 4. Tools of the Trade: Linux &amp; SQL
+              </a>
+              <a href="certificates/Google-Cybersecurity/5.-Coursera Assets, Threats, and Vulnerabilities (IA9C2NPKN3HB).pdf"
+                 target="_blank" rel="noopener noreferrer" class="cert-sub-item">
+                <i class="fas fa-file-pdf"></i> 5. Assets, Threats, and Vulnerabilities
+              </a>
+              <a href="certificates/Google-Cybersecurity/6.-Coursera-Sound the Alarm-Detection and Response  OTW3CJJ497ME.pdf"
+                 target="_blank" rel="noopener noreferrer" class="cert-sub-item">
+                <i class="fas fa-file-pdf"></i> 6. Sound the Alarm: Detection &amp; Response
+              </a>
+              <a href="certificates/Google-Cybersecurity/7.- Coursera  - Automate Cybersecurity with Python JWQJ0LIKU4XS.pdf"
+                 target="_blank" rel="noopener noreferrer" class="cert-sub-item">
+                <i class="fas fa-file-pdf"></i> 7. Automate Cybersecurity with Python
+              </a>
+              <a href="certificates/Google-Cybersecurity/8.-Coursera-Put It to Work-Prepare for cybersecurity Jobs  XA8R9GRR6NNW.pdf"
+                 target="_blank" rel="noopener noreferrer" class="cert-sub-item">
+                <i class="fas fa-file-pdf"></i> 8. Put It to Work: Prepare for Cybersecurity Jobs
+              </a>
+              <a href="certificates/Google-Cybersecurity/9.- Coursera- Accelerate Ypur Job Search With AI  KZ127WX7IK01.pdf"
+                 target="_blank" rel="noopener noreferrer" class="cert-sub-item">
+                <i class="fas fa-file-pdf"></i> 9. Accelerate Your Job Search with AI
+              </a>
+            </div>
+          </div>
+          <a href="certificates/Google-Cybersecurity/Certificado Ciberseguridad de Google Coursera UIY6QAIGL4XJ.pdf"
+             target="_blank" rel="noopener noreferrer" class="credential-link" title="Ver certificado profesional">
+            <i class="fas fa-file-pdf"></i>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- ===== CURSOS GOOGLE CYBERSECURITY ===== -->
+      <div class="section-sub-header reveal">
+        <span class="section-tag">// cybersecurity_specialization</span>
+        <h3 class="section-sub-title">Cursos de <span class="gradient-text">Google Cybersecurity</span></h3>
+        <p class="section-subtitle">Certificaciones individuales que componen el certificado profesional de Google</p>
+      </div>
+
+      <div class="google-certs-grid reveal">
+        <!-- Curso 1 -->
+        <div class="google-cert-card">
+          <div class="google-cert-icon"><i class="fas fa-shield-alt"></i></div>
+          <div class="google-cert-content">
+            <h4>Foundations of Cybersecurity</h4>
+            <span class="cert-status"><i class="fas fa-check-circle"></i> Completado</span>
+          </div>
+          <a href="certificates/Google-Cybersecurity/1.-Coursera Foundations of Cybersecurity (X3WET70SOALN).pdf" target="_blank" class="google-cert-view">
+            <i class="fas fa-file-pdf"></i> PDF
+          </a>
+        </div>
+
+        <!-- Curso 2 -->
+        <div class="google-cert-card">
+          <div class="google-cert-icon"><i class="fas fa-project-diagram"></i></div>
+          <div class="google-cert-content">
+            <h4>Play It Safe: Manage Security Risks</h4>
+            <span class="cert-status"><i class="fas fa-check-circle"></i> Completado</span>
+          </div>
+          <a href="certificates/Google-Cybersecurity/2.-Coursera Play It Safe Manage Security Risks (W1U8ONGLZMMK).pdf" target="_blank" class="google-cert-view">
+            <i class="fas fa-file-pdf"></i> PDF
+          </a>
+        </div>
+
+        <!-- Curso 3 -->
+        <div class="google-cert-card">
+          <div class="google-cert-icon"><i class="fas fa-network-wired"></i></div>
+          <div class="google-cert-content">
+            <h4>Connect and Protect: Networks</h4>
+            <span class="cert-status"><i class="fas fa-check-circle"></i> Completado</span>
+          </div>
+          <a href="certificates/Google-Cybersecurity/3.-Coursera Connect and Protect Networks and Network (75OREHM4D6CG).pdf" target="_blank" class="google-cert-view">
+            <i class="fas fa-file-pdf"></i> PDF
+          </a>
+        </div>
+
+        <!-- Curso 4 -->
+        <div class="google-cert-card">
+          <div class="google-cert-icon"><i class="fas fa-terminal"></i></div>
+          <div class="google-cert-content">
+            <h4>Tools of the Trade: Linux &amp; SQL</h4>
+            <span class="cert-status"><i class="fas fa-check-circle"></i> Completado</span>
+          </div>
+          <a href="certificates/Google-Cybersecurity/4.-Coursera Tools of the Trade Linux  and SQL (J0J0E9B2O3BU).pdf" target="_blank" class="google-cert-view">
+            <i class="fas fa-file-pdf"></i> PDF
+          </a>
+        </div>
+
+        <!-- Curso 5 -->
+        <div class="google-cert-card">
+          <div class="google-cert-icon"><i class="fas fa-user-lock"></i></div>
+          <div class="google-cert-content">
+            <h4>Assets, Threats, and Vulnerabilities</h4>
+            <span class="cert-status"><i class="fas fa-check-circle"></i> Completado</span>
+          </div>
+          <a href="certificates/Google-Cybersecurity/5.-Coursera Assets, Threats, and Vulnerabilities (IA9C2NPKN3HB).pdf" target="_blank" class="google-cert-view">
+            <i class="fas fa-file-pdf"></i> PDF
+          </a>
+        </div>
+
+        <!-- Curso 6 -->
+        <div class="google-cert-card">
+          <div class="google-cert-icon"><i class="fas fa-bell"></i></div>
+          <div class="google-cert-content">
+            <h4>Sound the Alarm: Detection &amp; Response</h4>
+            <span class="cert-status"><i class="fas fa-check-circle"></i> Completado</span>
+          </div>
+          <a href="certificates/Google-Cybersecurity/6.-Coursera-Sound the Alarm-Detection and Response  OTW3CJJ497ME.pdf" target="_blank" class="google-cert-view">
+            <i class="fas fa-file-pdf"></i> PDF
+          </a>
+        </div>
+
+        <!-- Curso 7 -->
+        <div class="google-cert-card">
+          <div class="google-cert-icon"><i class="fab fa-python"></i></div>
+          <div class="google-cert-content">
+            <h4>Automate Cybersecurity with Python</h4>
+            <span class="cert-status"><i class="fas fa-check-circle"></i> Completado</span>
+          </div>
+          <a href="certificates/Google-Cybersecurity/7.- Coursera  - Automate Cybersecurity with Python JWQJ0LIKU4XS.pdf" target="_blank" class="google-cert-view">
+            <i class="fas fa-file-pdf"></i> PDF
+          </a>
+        </div>
+
+        <!-- Curso 8 -->
+        <div class="google-cert-card">
+          <div class="google-cert-icon"><i class="fas fa-briefcase"></i></div>
+          <div class="google-cert-content">
+            <h4>Put It to Work: Prepare for Jobs</h4>
+            <span class="cert-status"><i class="fas fa-check-circle"></i> Completado</span>
+          </div>
+          <a href="certificates/Google-Cybersecurity/8.-Coursera-Put It to Work-Prepare for cybersecurity Jobs  XA8R9GRR6NNW.pdf" target="_blank" class="google-cert-view">
+            <i class="fas fa-file-pdf"></i> PDF
+          </a>
+        </div>
+
+        <!-- Curso 9 -->
+        <div class="google-cert-card">
+          <div class="google-cert-icon"><i class="fas fa-robot"></i></div>
+          <div class="google-cert-content">
+            <h4>Accelerate Your Job Search with AI</h4>
+            <span class="cert-status"><i class="fas fa-check-circle"></i> Completado</span>
+          </div>
+          <a href="certificates/Google-Cybersecurity/9.- Coursera- Accelerate Ypur Job Search With AI  KZ127WX7IK01.pdf" target="_blank" class="google-cert-view">
+            <i class="fas fa-file-pdf"></i> PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- ===== BADGES ORACLE ONE ===== -->
+      <div class="section-sub-header reveal">
+        <span class="section-tag">// project_badges</span>
+        <h3 class="section-sub-title">Insignias de <span class="gradient-text">Proyectos Oracle ONE</span></h3>
+        <p class="section-subtitle">Reconocimientos por proyectos completados en el programa Oracle Next Education</p>
+      </div>
+
+      <div class="badges-grid reveal">
+
+        <div class="badge-project-card">
+          <div class="badge-project-img-wrapper">
+            <img src="certificates/Oracle_Alura/Badges/Badge-Conversor.png" alt="Badge Conversor de Monedas" class="badge-project-img" loading="lazy" />
+          </div>
+          <div class="badge-project-info">
+            <h4>Conversor de Monedas</h4>
+            <p>Aplicación Java con consumo de API externa para conversión de divisas en tiempo real.</p>
+            <span class="badge-project-tag"><i class="fab fa-java"></i> Java · API REST</span>
+          </div>
+        </div>
+
+        <div class="badge-project-card">
+          <div class="badge-project-img-wrapper">
+            <img src="certificates/Oracle_Alura/Badges/Badge-Literalura.png" alt="Badge LiterAlura" class="badge-project-img" loading="lazy" />
+          </div>
+          <div class="badge-project-info">
+            <h4>LiterAlura</h4>
+            <p>Catálogo de libros con integración a la API Gutendex, persistencia con Spring Data JPA y PostgreSQL.</p>
+            <span class="badge-project-tag"><i class="fas fa-leaf"></i> Spring Boot · PostgreSQL</span>
+          </div>
+        </div>
+
+        <div class="badge-project-card">
+          <div class="badge-project-img-wrapper">
+            <img src="certificates/Oracle_Alura/Badges/Badge-Spring-ForoHub.png" alt="Badge ForoHub Spring" class="badge-project-img" loading="lazy" />
+          </div>
+          <div class="badge-project-info">
+            <h4>ForoHub</h4>
+            <p>Foro RESTful con Spring Boot, autenticación JWT y documentación con Swagger / OpenAPI.</p>
+            <span class="badge-project-tag"><i class="fas fa-lock"></i> Spring Security · JWT</span>
+          </div>
+        </div>
+
+        <div class="badge-project-card">
+          <div class="badge-project-img-wrapper">
+            <img src="certificates/Oracle_Alura/Badges/Insignia Proyecto Amigo Secreto.png" alt="Insignia Amigo Secreto" class="badge-project-img" loading="lazy" />
+          </div>
+          <div class="badge-project-info">
+            <h4>Amigo Secreto</h4>
+            <p>Aplicación web interactiva con JavaScript para sorteo de "Amigo Secreto" con lógica aleatoria.</p>
+            <span class="badge-project-tag"><i class="fab fa-js-square"></i> JavaScript · HTML/CSS</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Cursos individuales Oracle Alura (accordeón) -->
+      <div class="reveal" style="margin-top: 2rem; text-align: center;">
+        <button class="cert-accordion-btn cert-accordion-btn--standalone" id="aluraCursosBtn" aria-expanded="false" aria-controls="aluraCursosList">
+          <i class="fas fa-graduation-cap"></i> Ver todos los certificados de cursos Alura Latam
+          <i class="fas fa-chevron-down cert-chevron"></i>
+        </button>
+        <div class="cert-accordion-list cert-accordion-list--standalone hidden" id="aluraCursosList">
+          <a href="certificates/Oracle_Alura/Ruben Azocar Daroch - Curso Aprender a aprender_ tecnicas para tu autodesarrollo - Alura.pdf"
+             target="_blank" rel="noopener noreferrer" class="cert-sub-item"><i class="fas fa-file-pdf"></i> Aprender a aprender: técnicas para tu autodesarrollo</a>
+          <a href="certificates/Oracle_Alura/Ruben Azocar Daroch - Curso Aprendizaje con IA_ personalizando tu rutina con ChatGPT - Alura.pdf"
+             target="_blank" rel="noopener noreferrer" class="cert-sub-item"><i class="fas fa-file-pdf"></i> Aprendizaje con IA: personalizando tu rutina con ChatGPT</a>
+          <a href="certificates/Oracle_Alura/Ruben Azocar Daroch - Curso ChatGPT y programación_ aumenta tu productividad - Alura.pdf"
+             target="_blank" rel="noopener noreferrer" class="cert-sub-item"><i class="fas fa-file-pdf"></i> ChatGPT y programación: aumenta tu productividad</a>
+          <a href="certificates/Oracle_Alura/Ruben Azocar Daroch - Curso Desarrollo de carrera_ demanda del mercado - Alura.pdf"
+             target="_blank" rel="noopener noreferrer" class="cert-sub-item"><i class="fas fa-file-pdf"></i> Desarrollo de carrera: demanda del mercado</a>
+          <a href="certificates/Oracle_Alura/Ruben Azocar Daroch - Curso Emprendimiento_ De la idea al plan de negocios - Alura.pdf"
+             target="_blank" rel="noopener noreferrer" class="cert-sub-item"><i class="fas fa-file-pdf"></i> Emprendimiento: de la idea al plan de negocios</a>
+          <a href="certificates/Oracle_Alura/Ruben Azocar Daroch - Curso Foco_ Enfocarse trae más resultados para el día a día - Alura.pdf"
+             target="_blank" rel="noopener noreferrer" class="cert-sub-item"><i class="fas fa-file-pdf"></i> Foco: Enfocarse trae más resultados</a>
+          <a href="certificates/Oracle_Alura/Ruben Azocar Daroch - Curso Fundamentos de Agilidad_ Primeros pasos para la transformación ágil - Alura.pdf"
+             target="_blank" rel="noopener noreferrer" class="cert-sub-item"><i class="fas fa-file-pdf"></i> Fundamentos de Agilidad</a>
+          <a href="certificates/Oracle_Alura/Ruben Azocar Daroch - Curso Git y GitHub_ repositorio, commit y versiones - Alura.pdf"
+             target="_blank" rel="noopener noreferrer" class="cert-sub-item"><i class="fas fa-file-pdf"></i> Git y GitHub: repositorio, commit y versiones</a>
+          <a href="certificates/Oracle_Alura/Ruben Azocar Daroch - Curso HTML y CSS_ Clases, Posicionamiento y Flexbox - Alura.pdf"
+             target="_blank" rel="noopener noreferrer" class="cert-sub-item"><i class="fas fa-file-pdf"></i> HTML y CSS: Clases, Posicionamiento y Flexbox</a>
+          <a href="certificates/Oracle_Alura/Ruben Azocar Daroch - Curso HTML y CSS_ ambientes de desarrollo, estructura de archivos y tags - Alura.pdf"
+             target="_blank" rel="noopener noreferrer" class="cert-sub-item"><i class="fas fa-file-pdf"></i> HTML y CSS: Ambientes de desarrollo y estructura</a>
+          <a href="certificates/Oracle_Alura/Ruben Azocar Daroch - Curso HTML y CSS_ header, footer y variables CSS - Alura.pdf"
+             target="_blank" rel="noopener noreferrer" class="cert-sub-item"><i class="fas fa-file-pdf"></i> HTML y CSS: Header, Footer y Variables CSS</a>
+          <a href="certificates/Oracle_Alura/Ruben Azocar Daroch - Curso HTML y CSS_ trabajando con responsividad y publicación de proyectos - Alura.pdf"
+             target="_blank" rel="noopener noreferrer" class="cert-sub-item"><i class="fas fa-file-pdf"></i> HTML y CSS: Responsividad y publicación de proyectos</a>
+          <a href="certificates/Oracle_Alura/Ruben Azocar Daroch - Curso Hábitos_ Ser productivo para cumplir sus metas personales - Alura.pdf"
+             target="_blank" rel="noopener noreferrer" class="cert-sub-item"><i class="fas fa-file-pdf"></i> Hábitos: Ser productivo para cumplir metas personales</a>
+          <a href="certificates/Oracle_Alura/Ruben Azocar Daroch - Curso IA_ explorando el potencial de la Inteligencia Artificial Generativa - Alura.pdf"
+             target="_blank" rel="noopener noreferrer" class="cert-sub-item"><i class="fas fa-file-pdf"></i> IA: Explorando el potencial de la IA Generativa</a>
+          <a href="certificates/Oracle_Alura/Ruben Azocar Daroch - Curso Ingeniería de Prompt_ creando prompts eficaces para la IA generativa - Alura.pdf"
+             target="_blank" rel="noopener noreferrer" class="cert-sub-item"><i class="fas fa-file-pdf"></i> Ingeniería de Prompt: creando prompts eficaces</a>
+          <a href="certificates/Oracle_Alura/Ruben Azocar Daroch - Curso Java_ aplicando la Orientación a Objetos - Alura.pdf"
+             target="_blank" rel="noopener noreferrer" class="cert-sub-item"><i class="fas fa-file-pdf"></i> Java: Aplicando la Orientación a Objetos</a>
+          <a href="certificates/Oracle_Alura/Ruben Azocar Daroch - Curso Java_ consumir API, escribir archivos y manejar errores - Alura.pdf"
+             target="_blank" rel="noopener noreferrer" class="cert-sub-item"><i class="fas fa-file-pdf"></i> Java: Consumir API, archivos y manejo de errores</a>
+          <a href="certificates/Oracle_Alura/Ruben Azocar Daroch - Curso Java_ creando tu primera API y conectándola al Front End - Alura.pdf"
+             target="_blank" rel="noopener noreferrer" class="cert-sub-item"><i class="fas fa-file-pdf"></i> Java: Creando tu primera API y conectándola al Front End</a>
+          <a href="certificates/Oracle_Alura/Ruben Azocar Daroch - Curso Java_ creando tu primera aplicación - Alura.pdf"
+             target="_blank" rel="noopener noreferrer" class="cert-sub-item"><i class="fas fa-file-pdf"></i> Java: Creando tu primera aplicación</a>
+          <a href="certificates/Oracle_Alura/Ruben Azocar Daroch - Curso Java_ persistencia de datos y consultas con Spring Data JPA - Alura.pdf"
+             target="_blank" rel="noopener noreferrer" class="cert-sub-item"><i class="fas fa-file-pdf"></i> Java: Persistencia de datos con Spring Data JPA</a>
+          <a href="certificates/Oracle_Alura/Ruben Azocar Daroch - Curso Java_ trabajando con lambdas, streams y Spring Framework - Alura.pdf"
+             target="_blank" rel="noopener noreferrer" class="cert-sub-item"><i class="fas fa-file-pdf"></i> Java: Lambdas, Streams y Spring Framework</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIOS ===== -->
+  <section class="testimonios section" id="testimonios">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// testimonials</span>
+        <h2 class="section-title">Lo que dicen <span class="gradient-text">de mí</span></h2>
+        <p class="section-subtitle">Palabras de colegas y colaboradores</p>
+      </div>
+
+      <div class="testimonios-slider" id="testimoniosSlider">
+        <div class="testimonios-track" id="testimoniosTrack">
+
+          <div class="testimonio-card">
+            <div class="testimonio-quote"><i class="fas fa-quote-left"></i></div>
+            <p class="testimonio-text">
+              "Trabaja con un nivel de detalle y profesionalismo impresionante. Sus soluciones siempre están bien estructuradas y escalables. Sin duda, un desarrollador en quien confiar."
+            </p>
+            <div class="testimonio-author">
+              <div class="author-avatar" style="background: linear-gradient(135deg, #00D4AA, #0066FF);">JG</div>
+              <div class="author-info">
+                <strong>Juan García</strong>
+                <span>Tech Lead · Empresa ABC</span>
+              </div>
+              <div class="testimonio-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonio-card">
+            <div class="testimonio-quote"><i class="fas fa-quote-left"></i></div>
+            <p class="testimonio-text">
+              "Tiene una capacidad única para entender el problema del cliente y traducirlo en código elegante y funcional. El proyecto fue entregado antes del plazo y superó nuestras expectativas."
+            </p>
+            <div class="testimonio-author">
+              <div class="author-avatar" style="background: linear-gradient(135deg, #a855f7, #ec4899);">MP</div>
+              <div class="author-info">
+                <strong>María Pérez</strong>
+                <span>Product Manager · Startup XYZ</span>
+              </div>
+              <div class="testimonio-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonio-card">
+            <div class="testimonio-quote"><i class="fas fa-quote-left"></i></div>
+            <p class="testimonio-text">
+              "Su compromiso con las buenas prácticas de desarrollo y la calidad del código lo distingue. Fue fundamental en el éxito de nuestro proyecto de migración a la nube."
+            </p>
+            <div class="testimonio-author">
+              <div class="author-avatar" style="background: linear-gradient(135deg, #F59E0B, #EF4444);">CR</div>
+              <div class="author-info">
+                <strong>Carlos Rodríguez</strong>
+                <span>CTO · Dev Agency</span>
+              </div>
+              <div class="testimonio-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="slider-controls">
+          <button class="slider-btn slider-prev" id="sliderPrev" aria-label="Anterior">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="slider-dots" id="sliderDots"></div>
+          <button class="slider-btn slider-next" id="sliderNext" aria-label="Siguiente">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="testimonios-actions reveal" style="margin-top: 3rem; text-align: center;">
+        <p class="testimonio-note" style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.25rem;">
+          <i class="fas fa-info-circle"></i> Los testimonios son revisados por Rubén antes de su publicación.
+        </p>
+        <button class="btn btn-primary" id="openTestimonioModal">
+          <i class="fas fa-comment-dots"></i> Dejar un testimonio
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACTO ===== -->
+  <section class="contacto section" id="contacto">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">// get_in_touch</span>
+        <h2 class="section-title">Hablemos y <span class="gradient-text">Colaboremos</span></h2>
+        <p class="section-subtitle">¿Tienes un proyecto en mente? Estoy listo para el desafío.</p>
+      </div>
+
+      <div class="contacto-grid">
+
+        <div class="contacto-info reveal">
+          <h3>¿Listo para construir algo <span class="gradient-text">increíble</span>?</h3>
+          <p>
+            Estoy disponible para proyectos freelance, colaboraciones o posiciones de tiempo completo.
+            Si tu idea necesita un desarrollador que se preocupe por la calidad y los detalles, hablemos.
+          </p>
+
+          <div class="contact-links">
+            <a href="mailto:Progpythontest@gmail.com" class="contact-link" id="contactEmail">
+              <div class="contact-link-icon" style="--color: #00D4AA;">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-link-info">
+                <span class="contact-link-label">Email</span>
+                <span class="contact-link-value">Progpythontest@gmail.com</span>
+              </div>
+              <i class="fas fa-arrow-right contact-link-arrow"></i>
+            </a>
+
+            <a href="https://github.com/RubenAzocar" target="_blank" rel="noopener noreferrer" class="contact-link" id="contactGithub">
+              <div class="contact-link-icon" style="--color: #f0f6fc;">
+                <i class="fab fa-github"></i>
+              </div>
+              <div class="contact-link-info">
+                <span class="contact-link-label">GitHub</span>
+                <span class="contact-link-value">github.com/RubenAzocar</span>
+              </div>
+              <i class="fas fa-arrow-right contact-link-arrow"></i>
+            </a>
+
+            <a href="https://linkedin.com/in/razocardaroch" target="_blank" rel="noopener noreferrer" class="contact-link" id="contactLinkedin">
+              <div class="contact-link-icon" style="--color: #0A66C2;">
+                <i class="fab fa-linkedin"></i>
+              </div>
+              <div class="contact-link-info">
+                <span class="contact-link-label">LinkedIn</span>
+                <span class="contact-link-value">linkedin.com/in/razocardaroch</span>
+              </div>
+              <i class="fas fa-arrow-right contact-link-arrow"></i>
+            </a>
+          </div>
+
+          <div class="availability-badge">
+            <span class="avail-dot"></span>
+            <span>Disponible para nuevos proyectos en 2025</span>
+          </div>
+        </div>
+
+        <div class="contacto-form-wrapper reveal">
+          <form class="contact-form" id="contactForm" novalidate>
+            <!-- Honeypot field - anti-bot -->
+            <div style="display:none;">
+              <label for="contactHoneypot">No rellenes este campo</label>
+              <input type="text" id="contactHoneypot" name="honeypot" />
+            </div>
+
+            <div class="form-group">
+              <label for="contactName">Nombre completo</label>
+              <div class="input-wrapper">
+                <i class="fas fa-user"></i>
+                <input type="text" id="contactName" name="name" placeholder="Juan García" required />
+              </div>
+              <span class="field-error" id="nameError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="contactEmailInput">Correo electrónico</label>
+              <div class="input-wrapper">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="contactEmailInput" name="email" placeholder="juan@empresa.com" required />
+              </div>
+              <span class="field-error" id="emailError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="contactSubject">Asunto</label>
+              <div class="input-wrapper">
+                <i class="fas fa-tag"></i>
+                <input type="text" id="contactSubject" name="subject" placeholder="Propuesta de proyecto" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contactMessage">Mensaje</label>
+              <div class="input-wrapper textarea-wrapper">
+                <i class="fas fa-comment-alt"></i>
+                <textarea id="contactMessage" name="message" rows="5" placeholder="Cuéntame sobre tu proyecto o idea..." required></textarea>
+              </div>
+              <span class="field-error" id="messageError"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+              <span class="btn-text"><i class="fas fa-paper-plane"></i> Enviar mensaje</span>
+              <span class="btn-loading hidden"><i class="fas fa-circle-notch fa-spin"></i> Enviando...</span>
+            </button>
+
+            <div class="form-success hidden" id="formSuccess">
+              <i class="fas fa-check-circle"></i>
+              <span>¡Mensaje enviado! Te responderé pronto.</span>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="#inicio" class="footer-logo">
+              <img src="img/logo_ra.png" alt="RA Logo" class="logo-img" style="height: 50px;">
+            </a>
+            <p>Construyendo el futuro digital con soluciones seguras y código de alto nivel.</p>
+            <div class="footer-socials">
+              <a href="https://github.com/RubenAzocar" target="_blank" rel="noopener noreferrer" title="GitHub" id="footerGithub"><i class="fab fa-github"></i></a>
+              <a href="https://linkedin.com/in/razocardaroch" target="_blank" rel="noopener noreferrer" title="LinkedIn" id="footerLinkedin"><i class="fab fa-linkedin"></i></a>
+              <a href="mailto:Progpythontest@gmail.com" title="Email" id="footerEmail"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <h4>Navegación</h4>
+            <ul>
+              <li><a href="#inicio">Inicio</a></li>
+              <li><a href="#sobre-mi">Sobre Mí</a></li>
+              <li><a href="#proyectos">Proyectos</a></li>
+              <li><a href="#skills">Skills</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <h4>Más</h4>
+            <ul>
+              <li><a href="#credenciales">Credenciales</a></li>
+              <li><a href="#testimonios">Testimonios</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-contact">
+            <h4>Contacto</h4>
+            <p><i class="fas fa-envelope"></i> Progpythontest@gmail.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> Chile, Sudamérica</p>
+            <p><i class="fas fa-clock"></i> Zona horaria: CLT (UTC-3)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; <span id="footerYear"></span> Rubén Azócar Daroch — Todos los derechos reservados.</p>
+        <p>Hecho con <span class="heart">❤️</span> y mucho <span class="coffee">☕</span> en Chile</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== MODAL DE PROYECTO ===== -->
+  <div class="modal-overlay" id="projectModal" aria-modal="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-container">
+      <button class="modal-close" id="modalClose" aria-label="Cerrar modal">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <div class="modal-header">
+        <div class="modal-repo-icon">
+          <i class="fas fa-code-branch"></i>
+        </div>
+        <div class="modal-title-group">
+          <h2 id="modalTitle">Nombre del Repositorio</h2>
+          <span class="modal-visibility" id="modalVisibility">público</span>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-stats-row">
+          <div class="modal-stat">
+            <i class="fas fa-star"></i>
+            <span id="modalStars">0</span> stars
+          </div>
+          <div class="modal-stat">
+            <i class="fas fa-code-branch"></i>
+            <span id="modalForks">0</span> forks
+          </div>
+          <div class="modal-stat">
+            <i class="fas fa-eye"></i>
+            <span id="modalWatchers">0</span> watchers
+          </div>
+          <div class="modal-stat">
+            <i class="fas fa-circle"></i>
+            <span id="modalLang">—</span>
+          </div>
+        </div>
+
+        <div class="modal-description">
+          <h4>Descripción</h4>
+          <p id="modalDescription">Sin descripción disponible.</p>
+        </div>
+
+        <div class="modal-topics" id="modalTopics"></div>
+
+        <div class="modal-meta">
+          <div class="modal-meta-item">
+            <i class="fas fa-calendar-plus"></i>
+            <span>Creado: <strong id="modalCreated">—</strong></span>
+          </div>
+          <div class="modal-meta-item">
+            <i class="fas fa-calendar-check"></i>
+            <span>Actualizado: <strong id="modalUpdated">—</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="modalGithubLink">
+          <i class="fab fa-github"></i> Ver en GitHub
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" id="modalDemoLink">
+          <i class="fas fa-external-link-alt"></i> Ver Demo
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TESTIMONIO MODAL ===== -->
+  <div class="modal testimonio-modal" id="testimonioModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title-wrapper">
+          <div class="modal-icon"><i class="fas fa-comment-dots"></i></div>
+          <h3 class="modal-title">Dejar un Testimonio</h3>
+        </div>
+        <button class="modal-close" id="testimonioModalClose" aria-label="Cerrar modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <p style="margin-bottom: 1.5rem; color: var(--text-secondary); font-size: 0.9rem;">
+          Tu opinión es muy importante. Completa el formulario y tu testimonio será revisado antes de aparecer en el portafolio.
+        </p>
+
+        <form id="testimonioForm" class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="testimonioName">Nombre Completo</label>
+              <div class="input-wrapper">
+                <i class="fas fa-user"></i>
+                <input type="text" id="testimonioName" name="name" placeholder="Ej: Juan Pérez" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="testimonioRole">Cargo / Empresa</label>
+              <div class="input-wrapper">
+                <i class="fas fa-briefcase"></i>
+                <input type="text" id="testimonioRole" name="role" placeholder="Ej: Tech Lead @ Tech Corp" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Valoración</label>
+            <div class="rating-input">
+              <input type="radio" id="star5" name="rating" value="5" checked><label for="star5" title="5 estrellas"><i class="fas fa-star"></i></label>
+              <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="4 estrellas"><i class="fas fa-star"></i></label>
+              <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="3 estrellas"><i class="fas fa-star"></i></label>
+              <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="2 estrellas"><i class="fas fa-star"></i></label>
+              <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1 estrella"><i class="fas fa-star"></i></label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="testimonioMsg">Tu Comentario</label>
+            <div class="input-wrapper textarea-wrapper">
+              <i class="fas fa-quote-left"></i>
+              <textarea id="testimonioMsg" name="message" rows="4" placeholder="Cuéntanos tu experiencia trabajando conmigo..." required></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full" id="submitTestimonioBtn">
+            <span class="btn-text"><i class="fas fa-paper-plane"></i> Enviar para revisión</span>
+            <span class="btn-loading hidden"><i class="fas fa-circle-notch fa-spin"></i> Enviando...</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TOAST NOTIFICATION ===== -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
